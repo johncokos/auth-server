@@ -7,4 +7,4 @@ const todoModel = (sequelize, DataTypes) => sequelize.define('Todo', {
   complete: { type: DataTypes.BOOLEAN, required: true, defaultValue: false}
 });
 
-module.exports = todoMmodel;
+module.exports = todoModel;
