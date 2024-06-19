@@ -5,6 +5,8 @@ const { Sequelize, DataTypes } = require('sequelize');
 const clothesModel = require('./clothes/model.js');
 const foodModel = require('./food/model.js');
 const todoModel = require('./todo/model.js');
+const categoriesModel = require('./categories/model.js');
+const productsModel = require('./products/model.js');
 
 const userModel = require('../auth/models/users.js');
 
@@ -18,6 +20,8 @@ const sequelize = new Sequelize(DATABASE_URL, {logging:false});
 const food = foodModel(sequelize, DataTypes);
 const clothes = clothesModel(sequelize, DataTypes);
 const todo = todoModel(sequelize, DataTypes);
+const categories = categoriesModel(sequelize, DataTypes);
+const products = productsModel(sequelize, DataTypes);
 
 module.exports = {
   db: sequelize,
@@ -25,4 +29,6 @@ module.exports = {
   food: new Collection(food),
   clothes: new Collection(clothes),
   todo: new Collection(todo),
+  categories: new Collection(categories),
+  products: new Collection(products),
 };
